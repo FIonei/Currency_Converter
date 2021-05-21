@@ -1,10 +1,9 @@
 package com.example.currencyconverter
 
-import android.app.Activity.RESULT_OK
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -12,20 +11,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import java.util.*
 
-class RecyclerViewAdapter internal constructor(context: Context?, _items: Array<Valute>, val current: String) :
+class RecyclerViewAdapter internal constructor(context: Context?, _items: ArrayList<Valute>, var current: String) :
     RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
-    private val items: Array<Valute>
+    private val items: ArrayList<Valute>
     private val context: Context
     private val mInflater: LayoutInflater
     private var mClickListener: ItemClickListener? = null
-    private var imageList: MutableList<Int> = mutableListOf()
-    private var time: MutableList<String> = mutableListOf()
-
-    private val imageEx: String = "image"
-    private val nameEx: String = "bridgeName"
-    private val timeEx: String = "bridgeTime"
-    private val commentEx: String = "bridgeCommentary"
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = mInflater.inflate(
@@ -39,11 +30,8 @@ class RecyclerViewAdapter internal constructor(context: Context?, _items: Array<
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
         holder.bind(item)
-        holder.itemView.setOnClickListener { v ->
-            holder.check.visibility = VISIBLE
-            items[findIdByCode()]
-
-        }
+        if (item.CharCode.toString() == current) holder.check.visibility = VISIBLE
+        else holder.check.visibility = GONE
     }
 
     private fun findIdByCode(): Int {

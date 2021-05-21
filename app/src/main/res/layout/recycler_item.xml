@@ -14,34 +14,36 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="@dimen/normal_size"
         android:textStyle="bold"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginStart="@dimen/valute_name_margin_start"
+        android:layout_marginTop="@dimen/valute_name_margin_top"
+        android:layout_marginBottom="@dimen/valute_name_margin_bottom"
+        android:maxWidth="@dimen/valute_name_max_width"
         tools:text="Рубль"/>
     <TextView
         android:id="@+id/code_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/grey_two"
-        android:textSize="20sp"
+        android:textSize="@dimen/normal_size"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toStartOf="@id/check"
-        android:layout_marginEnd="20dp"
-        app:layout_goneMarginEnd="75dp"
+        android:layout_marginEnd="@dimen/valute_code_margin_end"
+        app:layout_goneMarginEnd="@dimen/valute_code_margin_end_gone"
         tools:text="RUB"/>
     <ImageView
         android:id="@+id/check"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/check_width"
+        android:layout_height="@dimen/check_height"
         android:src="@drawable/ic_action_name"
         android:visibility="gone"
-        android:layout_marginEnd="15dp"
+        android:layout_marginEnd="@dimen/check_margin_end"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="ContentDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

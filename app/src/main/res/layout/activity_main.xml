@@ -18,21 +18,25 @@
             android:id="@+id/leftLinear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="@dimen/linear_margin_start"
+            android:layout_marginTop="@dimen/linear_margin_top"
             android:orientation="vertical"
+            android:maxWidth="@dimen/linear_max_width"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <EditText
                 android:id="@+id/leftEdit"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/edit_width"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 android:backgroundTint="@android:color/transparent"
+                android:maxLength="7"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/normal_size"
+                android:textStyle="bold"
                 tools:text="120.5" />
             <TextView
                 android:id="@+id/leftText"
@@ -40,18 +44,19 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="@dimen/normal_size"
                 android:textStyle="bold"
-                android:layout_marginTop="30dp"
-                tools:text="RU" />
+                android:layout_marginTop="@dimen/linear_margin_inside"
+                android:maxWidth="@dimen/text_max_width"
+                tools:text="RUB" />
             <Button
                 android:id="@+id/leftButton"
-                android:layout_width="120dp"
+                android:layout_width="@dimen/button_width"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="@dimen/linear_margin_inside"
                 android:background="@android:color/transparent"
-                android:text="Изменить валюту"
+                android:text="@string/button_name"
                 android:textColor="@color/blue" />
         </LinearLayout>
 
@@ -59,47 +64,53 @@
             android:id="@+id/rightLinear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="50dp"
+            android:layout_marginTop="@dimen/linear_margin_top"
+            android:layout_marginEnd="@dimen/linear_end_margin"
             android:orientation="vertical"
+            android:maxWidth="@dimen/linear_max_width"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <EditText
                 android:id="@+id/rightEdit"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/right_edit_width"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold"
+                android:maxLength="7"
                 android:backgroundTint="@android:color/transparent"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/normal_size"
+                android:textStyle="bold"
                 tools:text="2.2" />
+
             <TextView
                 android:id="@+id/rightText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="@dimen/normal_size"
                 android:textStyle="bold"
-                android:layout_marginTop="30dp"
+                android:maxWidth="@dimen/text_max_width"
+                android:layout_marginTop="@dimen/linear_margin_inside"
                 tools:text="USD" />
             <Button
                 android:id="@+id/rightButton"
-                android:layout_width="120dp"
+                android:layout_width="@dimen/button_width"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@android:color/transparent"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="@dimen/linear_margin_inside"
                 android:text="Изменить валюту"
                 android:textColor="@color/blue" />
         </LinearLayout>
 
         <ImageButton
             android:id="@+id/changeButton"
-            android:layout_height="50dp"
-            android:layout_width="0dp"
+            android:layout_height="@dimen/image_button_height"
+            android:layout_width="@dimen/zero_dp"
             android:scaleType="fitXY"
             app:layout_constraintStart_toEndOf="@id/leftLinear"
             app:layout_constraintEnd_toStartOf="@id/rightLinear"
@@ -107,6 +118,17 @@
             app:layout_constraintBottom_toBottomOf="@id/leftLinear"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_baseline_sync_alt_24"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone"
+            android:background="@color/white"
+            android:elevation="@dimen/elevation">
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

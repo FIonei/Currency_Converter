@@ -16,7 +16,7 @@ class HTTPDataHandler {
             if (urlConnection.responseCode == HttpURLConnection.HTTP_OK) {
                 val inputStream = BufferedInputStream(urlConnection.inputStream)
 
-                val r = BufferedReader(InputStreamReader(inputStream))
+                val r = BufferedReader(InputStreamReader(inputStream, "windows-1251"))
                 val sb = StringBuilder()
                 var line = r.readLine()
                 while (line  != null){

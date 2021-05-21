@@ -1,7 +1,5 @@
 package com.example.currencyconverter
 
-import java.util.*
-
 class ValCurs {
     var Valute: List<Valute>? = null
     var Date: String? = null
@@ -9,7 +7,7 @@ class ValCurs {
     var text: String? = null
     fun getByCharCode(charCode: String): Valute? {
         for (i in Valute!!)
-            if (i.CharCode!!.toUpperCase(Locale.ROOT) == charCode.toUpperCase(Locale.ROOT)) return i
+            if (i.CharCode!!.equals(charCode, ignoreCase = true)) return i
         return null
     }
 }

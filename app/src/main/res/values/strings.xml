@@ -4,4 +4,11 @@
     <string name="changeValutes">Поменять валюты местами</string>
     <string name="bottomName">Доллар США</string>
     <string name="save">Сохранить</string>
+    <string name="xml_link">http://www.cbr.ru/scripts/XML_daily.asp</string>
+    <string name="float_format">%.2f</string>
+    <string name="snack_text">При нажатии меняет валюты местами</string>
+    <string name="button_name">Изменить валюту</string>
+    <string name="title_one">Конвертер валют</string>
+    <string name="title_two">Выбор валют</string>
+    <string name="cancel_button_name">Отмена</string>
 </resources>
