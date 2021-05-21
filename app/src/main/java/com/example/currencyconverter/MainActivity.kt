@@ -14,11 +14,9 @@ import com.google.android.material.snackbar.Snackbar
 import org.xmlpull.v1.XmlPullParser
 import org.xmlpull.v1.XmlPullParserFactory
 import java.io.*
-import java.lang.Integer.min
 import java.lang.String.format
 import java.math.BigDecimal
 import java.util.*
-import kotlin.math.max
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
